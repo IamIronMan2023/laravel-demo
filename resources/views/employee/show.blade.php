@@ -14,6 +14,8 @@
     <h3>Age: {{$employee -> age}}</h3>
     <h3>Email: {{$employee -> email}}</h3>
 
+    <p><a href="{{route('employees.index')}}">Back to List</a></p>
+    <p><a href="{{route('employees.edit', ['employee' => $employee->id])}}">Edit</a></p>
 </body>
 
 </html>

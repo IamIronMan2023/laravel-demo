@@ -30,4 +30,15 @@ class EmployeeController extends Controller
     {
         return view('employee.show')->with('employee', $employee);
     }
+
+    public function edit(Employee $employee)
+    {
+        return view('employee.edit')->with('employee', $employee);
+    }
+
+    public function update(Request $request, Employee $employee)
+    {
+        $employee->update(request()->all());
+        return redirect()->route('employees.show', ['employee' => $employee->id]);
+    }
 }

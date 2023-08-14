@@ -20,5 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/employees', [EmployeeController::class, 'index']);
-Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
+Route::get('/employees', [EmployeeController::class, 'index'])->name("employees.index");
+Route::get('/employees/{employee}', [EmployeeController::class, 'show'])->name("employees.show");
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit'])->name("employees.edit");
+Route::put('/employees/{employee}', [EmployeeController::class, 'update'])->name('employees.update');
