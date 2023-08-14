@@ -16,9 +16,9 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Age</th>
-        </tr>
+            < </tr>
 
-        @foreach ($employees as $employee)
+                @foreach ($employees as $employee)
         <tr>
             <td>{{ $employee -> first_name }}</td>
             <td>{{ $employee -> last_name}}</td>

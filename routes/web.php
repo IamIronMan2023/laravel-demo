@@ -21,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
