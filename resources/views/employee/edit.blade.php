@@ -9,7 +9,7 @@
 
 <body>
     <h1>Edit Employee</h1>
-    <form action="{{route('employees.update', ['employee' => $employee -> id])}}" method="POST">
+    <form action="{{route('employees.update', $employee -> id)}}" method="POST">
         @method('PUT')
         @csrf
         <p>

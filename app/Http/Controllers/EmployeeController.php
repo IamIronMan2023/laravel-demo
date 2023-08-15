@@ -52,4 +52,10 @@ class EmployeeController extends Controller
         Employee::create($request->all());
         return redirect()->route('employees.index');
     }
+
+    public function destroy(Employee $employee)
+    {
+        Employee::destroy($employee->id);
+        return redirect()->route('employees.index');
+    }
 }

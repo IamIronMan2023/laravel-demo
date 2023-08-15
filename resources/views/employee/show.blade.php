@@ -16,6 +16,13 @@
 
     <p><a href="{{route('employees.index')}}">Back to List</a></p>
     <p><a href="{{route('employees.edit', ['employee' => $employee->id])}}">Edit</a></p>
+
+    <form action="{{route('employees.destroy', $employee->id)}}" method="POST">
+        @method('DELETE')
+        @csrf
+
+        <input type="submit" value="Delete">
+    </form>
 </body>
 
 </html>
