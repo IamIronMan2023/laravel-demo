@@ -38,7 +38,7 @@ class EmployeeController extends Controller
 
     public function update(Request $request, Employee $employee)
     {
-        $employee->update(request()->all());
+        $employee->update($request->all());
         return redirect()->route('employees.show', ['employee' => $employee->id]);
     }
 
