@@ -41,4 +41,15 @@ class EmployeeController extends Controller
         $employee->update(request()->all());
         return redirect()->route('employees.show', ['employee' => $employee->id]);
     }
+
+    public function create()
+    {
+        return view("employee.create");
+    }
+
+    public function store(Request $request)
+    {
+        Employee::create($request->all());
+        return redirect()->route('employees.index');
+    }
 }

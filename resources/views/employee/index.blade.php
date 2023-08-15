@@ -10,6 +10,7 @@
 <body>
     <h1>Employee List</h1>
 
+    <a href="{{route('employees.create')}}">Create New Employee</a>
     <table>
         <tr>
             <th>First Name</th>
