@@ -3,7 +3,11 @@
 <div class="container">
     <h1>Employee List</h1>
 
+    @if (Auth::user())
     <a href="{{route('employees.create')}}">Create New Employee</a>
+    @endif
+
+
     <table class="table">
         <tr>
             <th>First Name</th>
@@ -23,6 +27,7 @@
         </tr>
         @endforeach
     </table>
+    {{ $employees->links() }}
 </div>
 
 @endsection

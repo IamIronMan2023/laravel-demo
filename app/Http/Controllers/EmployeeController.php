@@ -11,7 +11,7 @@ class EmployeeController extends Controller
 {
     public function index()
     {
-        $data = Employee::all();
+        $data = Employee::paginate(10);
         // $data = Employee::where('age', '>', 90)->get();
         // $data = Employee::where('first_name', 'LIKE', 'a%')->get();
 
