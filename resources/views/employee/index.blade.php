@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
-</head>
-
-<body>
+@extends('layouts.app')
+@section('content')
+<div class="container">
     <h1>Employee List</h1>
 
     <a href="{{route('employees.create')}}">Create New Employee</a>
-    <table>
+    <table class="table">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
@@ -30,10 +23,6 @@
         </tr>
         @endforeach
     </table>
+</div>
 
-
-
-
-</body>
-
-</html>
+@endsection

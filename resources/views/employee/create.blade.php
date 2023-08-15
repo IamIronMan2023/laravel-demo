@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Employee</title>
-</head>
-
-<body>
+@extends('layouts.app')
+@section('content')
+<div class="container">
     <h1>Create Employee</h1>
     <form action="{{route('employees.store')}}" method="POST">
         @csrf
@@ -36,12 +29,10 @@
             </select>
         </p>
 
-        <input type="submit" value="Save">
-        <a href="{{url()->previous()}}">Cancel</a>
+        <input class="btn btn-primary" type="submit" value="Save">
+        <a class="btn btn-secondary" href="{{url()->previous()}}">Cancel</a>
 
 
     </form>
-
-</body>
-
-</html>
+</div>
+@endsection

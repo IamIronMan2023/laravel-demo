@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Employee</title>
-</head>
-
-<body>
+@extends('layouts.app')
+@section('content')
+<div class="container">
     <h1>Edit Employee</h1>
     <form action="{{route('employees.update', $employee -> id)}}" method="POST">
         @method('PUT')
@@ -29,12 +22,10 @@
             <input type="number" name="age" value="{{$employee->age}}">
         </p>
 
-        <input type="submit" value="Update">
-        <a href="{{url()->previous()}}">Cancel</a>
+        <input class="btn btn-primary" type="submit" value="Update">
+        <a class="btn btn-secondary" href="{{url()->previous()}}">Cancel</a>
 
 
     </form>
-
-</body>
-
-</html>
+</div>
+@endsection
