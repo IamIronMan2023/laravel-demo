@@ -30,6 +30,7 @@
         </p>
 
         <input type="submit" value="Update">
+        <a href="{{url()->previous()}}">Cancel</a>
 
 
     </form>
