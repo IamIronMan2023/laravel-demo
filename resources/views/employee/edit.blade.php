@@ -19,14 +19,21 @@
         </div>
         <div class="mb-3 col-md-4">
             <label class="form-label">Age</label>
-            <input class="form-control" type="number" name="age" value="{{$employee->age}}">
+            <input class="form-control" type="number" name="age" value="{{$employee->age}}" required>
         </div>
         <div class="mb-3 col-md-4">
             <input class="btn btn-primary" type="submit" value="Update">
             <a class="btn btn-secondary" href="{{url()->previous()}}">Cancel</a>
         </div>
-
-
     </form>
+
+    @if($errors -> any())
+    <div class="text-danger">
+        @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </div>
+    @endif
+
 </div>
 @endsection

@@ -23,7 +23,8 @@
             <td>{{ $employee -> last_name}}</td>
             <td> {{ $employee -> email }}</td>
             <td>{{ $employee -> age}}</td>
-            <td><a href="{{route('employees.show', ['employee' => $employee -> id])}}">View</a></td>
+            <td><a class="btn btn-primary" href="{{route('employees.show', ['employee' => $employee -> id])}}">View</a>
+            </td>
         </tr>
         @endforeach
     </table>
