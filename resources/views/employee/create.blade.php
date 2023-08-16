@@ -34,13 +34,7 @@
 
     </form>
 
-    @if($errors -> any())
-    <div class="text-danger">
-        @foreach ($errors->all() as $error)
-        <li>{{$error}}</li>
-        @endforeach
-    </div>
-    @endif
+    @include('partials.error-list-footer')
 
 </div>
 @endsection

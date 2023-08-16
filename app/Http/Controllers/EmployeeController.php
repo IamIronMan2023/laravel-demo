@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -36,16 +37,8 @@ class EmployeeController extends Controller
         return view('employee.edit')->with('employee', $employee);
     }
 
-    public function update(Request $request, Employee $employee)
+    public function update(EmployeeRequest $request, Employee $employee)
     {
-        $request->validate([
-            "first_name" => 'required',
-            "last_name" => "required",
-            "email" => "required",
-            "age" => "required|integer|min:1|max:120",
-            "gender" => "required"
-        ]);
-
         $employee->update($request->all());
         return redirect()->route('employees.show', ['employee' => $employee->id]);
     }
@@ -55,16 +48,8 @@ class EmployeeController extends Controller
         return view("employee.create");
     }
 
-    public function store(Request $request)
+    public function store(EmployeeRequest $request)
     {
-        $request->validate([
-            "first_name" => 'required',
-            "last_name" => "required",
-            "email" => "required",
-            "age" => "required|integer|min:1|max:120",
-            "gender" => "required"
-        ]);
-
         Employee::create($request->all());
         return redirect()->route('employees.index');
     }
