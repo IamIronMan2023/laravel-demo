@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\EmployeeRepository;
+use App\Repositories\EmployeeRepositoryInterface;
+use App\Repositories\EmployeeRepositoryMock;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -19,6 +22,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->app->bind(EmployeeRepositoryInterface::class, EmployeeRepository::class);
     }
 }
